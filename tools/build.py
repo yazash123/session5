@@ -76,5 +76,17 @@ rep("You are part of society like everyone else. We all depend", "We all depend"
 # 5. Risk map: no dotted arcs between risks that mention each other (the in-text links stay).
 rep("function setXref(src,only){\n", "function setXref(src,only){\n  src=null; // arcs between related risks switched off\n")
 
+# 6. How it works diagram, 15 Oct: "Risk" with an exclamation mark at the centre, dotted straight
+#    lines to the nine areas, and the grey Society circle grown to hold most of them.
+rep("'<div class=\"yme\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">'+PERSON+'</svg><b>You</b><span>assembly member</span></div>'",
+    "'<div class=\"yme\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"stroke-width:2.6\"><path d=\"M12 4v11\"/><path d=\"M12 19.8v.01\"/></svg><b>Risk</b></div>'")
+rep('<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js">',
+    '<style>\n'
+    '.you .ystage{isolation:isolate}\n'
+    '.you .ysoc{width:86%;z-index:-1}\n'
+    '.you .ysoc span{bottom:23%}\n'
+    '.you .ylines line{stroke:#2A4A78;stroke-width:2.6;stroke-dasharray:0 7;stroke-linecap:round;opacity:.8}\n'
+    '</style>\n<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js">')
+
 (out / 'index.html').write_text(s, encoding='utf-8')
 print('wrote', out / 'index.html', len(s))

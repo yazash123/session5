@@ -962,6 +962,12 @@ body.tall .hm td.none{background:#F3F3F3}
   <section id="v-all" class="stack" hidden></section>
 </main>
 
+<style>
+.you .ystage{isolation:isolate}
+.you .ysoc{width:86%;z-index:-1}
+.you .ysoc span{bottom:23%}
+.you .ylines line{stroke:#2A4A78;stroke-width:2.6;stroke-dasharray:0 7;stroke-linecap:round;opacity:.8}
+</style>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script src="firebase-config.js"></script>
@@ -1442,7 +1448,7 @@ function youHTML(){
       '<div class="ydesc" id="ydesc" aria-live="polite">'+yDescHTML(null)+'</div></div>'+
     '<div class="ystage" id="ystage"><svg class="teth ylines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'+lines+'</svg>'+
       '<div class="ysoc" aria-hidden="true"><span>Society</span></div>'+
-      '<div class="yme"><svg viewBox="0 0 24 24" aria-hidden="true">'+PERSON+'</svg><b>You</b><span>assembly member</span></div>'+sats+'</div>'+
+      '<div class="yme"><svg viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:2.6"><path d="M12 4v11"/><path d="M12 19.8v.01"/></svg><b>Risk</b></div>'+sats+'</div>'+
     '<ul class="ylist">'+AREAS.map(function(a){return '<li><span class="yd-i" style="background:'+a.c+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+a.ic+'</svg></span><div><p class="yd-n">'+esc(a.n)+'</p><p class="yd-t">'+esc(a.d)+'</p></div></li>';}).join('')+'</ul>'+
   '</section>';
 }
