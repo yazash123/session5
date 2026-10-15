@@ -70,7 +70,7 @@ rep("Scores can’t be submitted from this view. Open the page signed in to Clau
     "Scores can’t be sent right now. Check your connection and reload the page. If it keeps happening, tell your facilitator.")
 
 # 4. Copy changes, 15 Oct: How it works heading and opening line.
-rep("<h2 class=\"h2\"><b>You</b> at the centre</h2>", "<h2 class=\"h2\">The <b>impact</b> of AI on society</h2>")
+rep("<h2 class=\"h2\"><b>You</b> at the centre</h2>", "<h2 class=\"h2\">The <b>impact</b> of a risk <b>on society</b></h2>")
 rep("You are part of society like everyone else. We all depend", "We all depend")
 
 # 5. Risk map: no dotted arcs between risks that mention each other (the in-text links stay).
