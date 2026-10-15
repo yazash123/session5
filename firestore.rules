@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // One document per person, per group, per risk.
+    match /subs/{id} {
+      allow read: if true;
+
+      allow create, update: if id.size() <= 160
+        && request.resource.data.keys().hasOnly(['name', 'group', 'risk', 's', 'at'])
+        && request.resource.data.keys().hasAll(['name', 'group', 'risk', 's', 'at'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 1
+        && request.resource.data.name.size() <= 80
+        && request.resource.data.group is int
+        && request.resource.data.group >= 1
+        && request.resource.data.group <= 17
+        && request.resource.data.risk is string
+        && request.resource.data.risk.size() <= 12
+        && request.resource.data.s is map
+        && request.resource.data.s.size() <= 12
+        && request.resource.data.at is int;
+
+      // Nobody can delete from the page. Clear scores in the Firebase console.
+      allow delete: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

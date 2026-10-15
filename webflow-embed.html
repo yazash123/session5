@@ -1,0 +1,19 @@
+<!-- Risk impact scoring: paste into ONE Webflow Code Embed, in a full-width section (not a Container). -->
+<div id="hotp-scores-wrap" style="width:100%;margin:0;padding:0">
+  <iframe id="hotp-scores"
+    title="Score the risks with your group"
+    data-src="https://yazash123.github.io/session5/"
+    allow="clipboard-write"
+    style="display:block;width:100%;height:100vh;height:100dvh;border:0;background:#fff"></iframe>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('hotp-scores'), base=f.getAttribute('data-src');
+  // Group links: put #g1 to #g17 on the end of the Webflow page address.
+  function pass(){
+    var h=/^#g\d{1,2}$/.test(location.hash)?location.hash:'';
+    if(f.getAttribute('src')!==base+h) f.setAttribute('src',base+h);
+  }
+  pass(); window.addEventListener('hashchange',pass);
+})();
+</script>
